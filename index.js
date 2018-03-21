@@ -312,6 +312,10 @@ function receivedMessage(event) {
         requiresServerURL(sendAccountLinking, [senderID]);
         break;
 
+      case 'info':
+        sendQuickInfo(senderID);
+        break;
+
       default:
         sendTextMessage(senderID, messageText);
     }
@@ -748,19 +752,19 @@ function sendQuickReply(recipientId) {
     message: {
       text: "What's your favorite movie genre?",
       quick_replies: [
-        // {
-        //   "content_type":"text",
-        //   "title":"Action",
-        //   "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
-        // },
-        // {
-        //   "content_type":"text",
-        //   "title":"Comedy",
-        //   "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
-        // },
         {
-          "content_type":"user_phone_number",
-          // "title":"Drama",
+          "content_type":"text",
+          "title":"Action",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
+        },
+        {
+          "content_type":"text",
+          "title":"Comedy",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
+        },
+        {
+          "content_type":"text",
+          "title":"Drama",
           "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
         }
       ]
@@ -842,6 +846,33 @@ function sendAccountLinking(recipientId) {
           }]
         }
       }
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+/*
+ * Send a message with quicky info 
+ *
+*/
+function sendQuickInfo(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "This is your email and phone?",
+      quick_replies: [
+        {
+          "content_type":"user_phone_number",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_USER_PHONE_NUMBER"
+        },
+        {
+          "content_type":"user_email",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_USER_EMAIL"
+        }
+      ]
     }
   };
 
