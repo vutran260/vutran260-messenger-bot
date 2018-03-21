@@ -746,22 +746,23 @@ function sendQuickReply(recipientId) {
       id: recipientId
     },
     message: {
+      "mid": "mid.$cAAJsujCd29DfHXKOOVd7C1F97Zto",
+      "seq": 9767,
       text: "What's your favorite movie genre?",
       quick_replies: [
+        // {
+        //   "content_type":"text",
+        //   "title":"Action",
+        //   "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
+        // },
+        // {
+        //   "content_type":"text",
+        //   "title":"Comedy",
+        //   "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
+        // },
         {
-          "content_type":"text",
-          "title":"Action",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
-        },
-        {
-          "content_type":"text",
-          "title":"Comedy",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
-        },
-        {
-          "content_type":"text",
-          "title":"Drama",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
+          "content_type":"user_phone_number",
+          "payload":"<PHONE_NUMBER>"
         }
       ]
     }
