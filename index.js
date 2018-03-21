@@ -746,8 +746,6 @@ function sendQuickReply(recipientId) {
       id: recipientId
     },
     message: {
-      "mid": "mid.$cAAJsujCd29DfHXKOOVd7C1F97Zto",
-      "seq": 9767,
       text: "What's your favorite movie genre?",
       quick_replies: [
         // {
@@ -762,7 +760,8 @@ function sendQuickReply(recipientId) {
         // },
         {
           "content_type":"user_phone_number",
-          "payload":"<PHONE_NUMBER>"
+          // "title":"Drama",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
         }
       ]
     }
