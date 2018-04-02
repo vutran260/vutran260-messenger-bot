@@ -318,7 +318,9 @@ function receivedMessage(event) {
 
       case 'hue':
       case 'thua thien hue':
-        sendTextMessage(senderID, 'dulichhue.com/gioi-thieu');
+        sendTextMessage(senderID, 'dulichhue.ga/gioi-thieu');
+        break;
+
       default:
         sendTextMessage(senderID, messageText);
     }
