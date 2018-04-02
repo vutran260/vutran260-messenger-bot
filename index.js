@@ -316,6 +316,9 @@ function receivedMessage(event) {
         sendQuickInfo(senderID);
         break;
 
+      case 'hue':
+      case 'thua thien hue':
+        sendTextMessage(senderID, 'dulichhue.com/gioi-thieu');
       default:
         sendTextMessage(senderID, messageText);
     }
