@@ -316,11 +316,22 @@ function receivedMessage(event) {
         sendQuickInfo(senderID);
         break;
 
+      case 'du lich hue':
+        sendTextMessage(senderID, 'dulichhue.ga/');
+        break;
       case 'hue':
       case 'thua thien hue':
         sendTextMessage(senderID, 'dulichhue.ga/gioi-thieu');
         break;
-
+      case 'dat phong':
+      case 'thue phong':
+        sendTextMessage(senderID, 'dulichhue.ga/phong');
+        break;
+      case 'dac san hue':
+      case 'mon an':
+      case 'nha hang hue':
+        sendTextMessage(senderID, 'dulichhue.ga/nha-hang');
+        break;
       default:
         sendTextMessage(senderID, messageText);
     }
